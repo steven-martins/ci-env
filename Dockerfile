@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y \
   php7.0-mysql \
   php7.0-curl \
   composer
-  
-RUN apt-get install -y php7.0-mbstring \
+
+RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip \
 && rm -r /var/lib/apt/lists/
 
 RUN npm install -g gulp grunt bower typescript
