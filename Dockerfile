@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
   openssh-client \
   rsync \
   bzip2 \
-  python \
+  python3 \
+  python3-pip \
   nodejs \
   git \
   libmcrypt-dev \
