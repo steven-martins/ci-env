@@ -17,10 +17,10 @@ RUN apt-get update && apt-get install -y \
   php7.0-mcrypt \
   php7.0-mysql \
   php7.0-curl \
-  composer \
-  && rm -r /var/lib/apt/lists/*
-
-RUN apt-get install -y php-mbstring
+  composer
+  
+RUN apt-get install -y php7.0-mbstring \
+&& rm -r /var/lib/apt/lists/
 
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
