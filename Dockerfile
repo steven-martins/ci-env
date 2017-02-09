@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
   composer \
   && rm -r /var/lib/apt/lists/*
 
+RUN apt-get install -y php7.0-mbstring
+
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
