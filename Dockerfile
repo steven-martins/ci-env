@@ -1,5 +1,10 @@
 FROM ubuntu:16.04
 
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
 RUN apt-get update && apt-get install -y \
   curl ca-certificates xz-utils phpunit
 
@@ -13,6 +18,7 @@ RUN apt-get update && apt-get install -y \
   python3-pip \
   nodejs \
   git \
+  sass \
   libmcrypt-dev \
   php7.0-mcrypt \
   php7.0-mysql \
