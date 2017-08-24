@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
   bzip2 \
   python3 \
   python3-pip \
+  python3-virtualenv \
+  python-virtualenv \
   nodejs \
   git \
   libmcrypt-dev \
