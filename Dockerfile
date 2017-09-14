@@ -11,12 +11,21 @@ RUN apt-get update && apt-get install -y \
   bzip2 \
   python3 \
   python3-pip \
+  python3-virtualenv \
+  python-virtualenv \
   nodejs \
   git \
   libmcrypt-dev \
   php7.0-mcrypt \
   php7.0-mysql \
   php7.0-curl \
+  libjpeg-dev \
+  libzlcore-dev \
+  libtiff5-dev \
+  libfreetype6-dev \
+  libwebp-dev \
+  libopenjpeg-dev \
+  libtk-img-dev \
   composer
 
 RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
