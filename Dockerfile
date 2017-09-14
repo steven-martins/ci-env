@@ -22,8 +22,13 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
 && rm -r /var/lib/apt/lists/
 
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update \
+  && apt-get install -y mysql-server mysql-client libmysqlclient-dev --no-install-recommends \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
-
 
 CMD ["/bin/bash"]
