@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
   libtk-img-dev \
   composer
 
-RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
+RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass php-xdebug \
 && rm -r /var/lib/apt/lists/
 
 ENV DEBIAN_FRONTEND noninteractive
