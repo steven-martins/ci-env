@@ -19,6 +19,13 @@ RUN apt-get update && apt-get install -y \
   php7.0-mcrypt \
   php7.0-mysql \
   php7.0-curl \
+  libjpeg-dev \
+  libzlcore-dev \
+  libtiff5-dev \
+  libfreetype6-dev \
+  libwebp-dev \
+  libopenjpeg-dev \
+  libtk-img-dev \
   composer
 
 
@@ -56,8 +63,17 @@ RUN npm install --unsafe-perm -g \
     protractor-console \
     protractor-jasmine2-screenshot-reporter
 
-RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
+RUN apt-get install -y apache2 libapache2-mod-php7.0
+
+RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass php-xdebug \
 && rm -r /var/lib/apt/lists/
+
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update \
+  && apt-get install -y mysql-server mysql-client libmysqlclient-dev --no-install-recommends \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
