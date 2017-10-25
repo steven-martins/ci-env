@@ -1,9 +1,10 @@
 FROM ubuntu:16.04
 
 RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+RUN locale-gen fr_FR.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LANGUAGE fr_FR:fr
+ENV LC_ALL fr_FR.UTF-8
 
 RUN apt-get update && apt-get install -y \
   curl ca-certificates xz-utils phpunit
