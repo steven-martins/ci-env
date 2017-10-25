@@ -1,13 +1,13 @@
 FROM ubuntu:16.04
 
+RUN apt-get update && apt-get install -y \
+  curl ca-certificates xz-utils phpunit locales
+  
 RUN locale-gen en_US.UTF-8
 RUN locale-gen fr_FR.UTF-8
 ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR:fr
 ENV LC_ALL fr_FR.UTF-8
-
-RUN apt-get update && apt-get install -y \
-  curl ca-certificates xz-utils phpunit
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y \
   bzip2 \
   python3 \
   python3-pip \
+  python3-virtualenv \
+  python-virtualenv \
   nodejs \
   git \
   sass \
