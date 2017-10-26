@@ -34,5 +34,8 @@ RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
+RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \ 
+  && unzip ngrok-stable-linux-amd64.zip && mv ngrok /usr/bin/ \ 
+  && rm ngrok-stable-linux-amd64.zip
 
 CMD ["/bin/bash"]
