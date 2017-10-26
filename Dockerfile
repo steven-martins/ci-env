@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
   php7.0-mcrypt \
   php7.0-mysql \
   php7.0-curl \
+  wget \
   composer
 
 RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
