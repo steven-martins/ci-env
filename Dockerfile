@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
   screen \
   composer \
   libffi-dev \
-  build-essential
+  build-essential \
+  redis-server
 
 RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass \
 && rm -r /var/lib/apt/lists/
