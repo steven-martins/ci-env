@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   redis-server
 
-RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass
+RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass php-xdebug
 
 RUN npm install -g gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
