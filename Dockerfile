@@ -9,7 +9,9 @@ ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR:fr
 ENV LC_ALL fr_FR.UTF-8
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update && apt-get install -y \
   openssh-client \
@@ -31,11 +33,14 @@ RUN apt-get update && apt-get install -y \
   composer \
   libffi-dev \
   build-essential \
-  redis-server
+  redis-server \
+  yarn
 
 RUN apt-get install -y php7.0-mbstring php7.0-zip unzip zip ruby-compass php-xdebug
 
-RUN npm install -g gulp grunt bower typescript
+RUN composer global require hirak/prestissimo
+
+RUN yarn global add gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip \ 
