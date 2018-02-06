@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y \
   php7.0-mcrypt \
   php7.0-mysql \
   php7.0-curl \
+  php7.0-ldap \
   wget \
   screen \
   composer \
