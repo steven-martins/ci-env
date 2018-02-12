@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install -y \
     php7.0-phpdbg \
     php7.0-xml \
     php7.0-zip \
+    php7.0-soap \
     php-memcached \
     composer
 
