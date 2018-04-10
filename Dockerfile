@@ -11,6 +11,7 @@ ENV LC_ALL fr_FR.UTF-8
 
 # Tools install
 RUN apt-get update && apt-get install -y \
+    software-properties-common \
     openssh-client \
     rsync \
     bzip2 \
@@ -36,19 +37,21 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get update && apt-get install -y yarn
 
 # PHP install
-RUN apt-get update && apt-get install -y \
-    php7.0 \
-    php7.0-curl \
-    php7.0-ldap \
-    php7.0-mbstring \
-    php7.0-mcrypt \
-    php7.0-mysql \
-    php7.0-phpdbg \
-    php7.0-xml \
-    php7.0-zip \
-    php7.0-soap \
+RUN add-apt-repository ppa:ondrej/php && \
+    apt-get update && apt-get install -y \
+    php7.1 \
+    php7.1-curl \
+    php7.1-ldap \
+    php7.1-mbstring \
+    php7.1-mcrypt \
+    php7.1-mysql \
+    php7.1-phpdbg \
+    php7.1-xml \
+    php7.1-zip \
+    php7.1-soap \
     php-memcached \
-    composer
+    composer && \
+    update-alternatives --set php /usr/bin/php7.1
 
 # Python install
 RUN apt-get update && apt-get install -y \
