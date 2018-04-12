@@ -49,6 +49,7 @@ RUN add-apt-repository ppa:ondrej/php && \
     php7.1-xml \
     php7.1-zip \
     php7.1-soap \
+    php7.1-gd \
     php-memcached \
     composer && \
     update-alternatives --set php /usr/bin/php7.1
