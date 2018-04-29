@@ -77,4 +77,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
+RUN curl https://phar.phpunit.de/phpcov.phar -o /usr/bin/phpcov && chmod +x /usr/bin/phpcov
+
 CMD ["/bin/bash"]
