@@ -39,19 +39,19 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 # PHP install
 RUN add-apt-repository ppa:ondrej/php && \
     apt-get update && apt-get install -y \
-    php7.1 \
-    php7.1-curl \
-    php7.1-ldap \
-    php7.1-mbstring \
-    php7.1-mysql \
-    php7.1-phpdbg \
-    php7.1-xml \
-    php7.1-zip \
-    php7.1-soap \
-    php7.1-gd \
+    php7.2 \
+    php7.2-curl \
+    php7.2-ldap \
+    php7.2-mbstring \
+    php7.2-mysql \
+    php7.2-phpdbg \
+    php7.2-xml \
+    php7.2-zip \
+    php7.2-soap \
+    php7.2-gd \
     php-memcached \
     composer && \
-    update-alternatives --set php /usr/bin/php7.1 && \
+    update-alternatives --set php /usr/bin/php7.2 && \
     composer global require hirak/prestissimo
 
 # Python install
