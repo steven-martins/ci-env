@@ -75,12 +75,12 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 RUN yarn global add codeceptjs puppeteer
 
 # MySQL Install
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update \
-  && apt-get install -y mysql-server mysql-client libmysqlclient-dev --no-install-recommends \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-  && chown -R mysql:mysql /var/lib/mysql
+#ENV DEBIAN_FRONTEND noninteractive
+#RUN apt-get update \
+#  && apt-get install -y mysql-server mysql-client libmysqlclient-dev --no-install-recommends \
+#  && apt-get clean \
+#  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+#  && chown -R mysql:mysql /var/lib/mysql
 
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
