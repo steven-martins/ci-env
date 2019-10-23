@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     redis-server \
     unzip \
     zip \
+    jq \
     ruby-compass
 
 # Node install
