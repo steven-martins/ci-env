@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
+
+ENV TZ=Europe/Paris
 
 RUN apt-get update && apt-get install -y \
     curl ca-certificates xz-utils locales
@@ -8,6 +10,8 @@ RUN locale-gen fr_FR.UTF-8
 ENV LANG fr_FR.UTF-8
 ENV LANGUAGE fr_FR:fr
 ENV LC_ALL fr_FR.UTF-8
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 
 # Tools install
 RUN apt-get update && apt-get install -y \
@@ -29,7 +33,7 @@ RUN apt-get update && apt-get install -y \
     ruby-compass
 
 # Node install
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get install -y nodejs
 
 # Yarn install
@@ -71,9 +75,9 @@ RUN yarn global add gulp grunt bower typescript
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
 # Ngrok install
-RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
-    unzip ngrok-stable-linux-amd64.zip && mv ngrok /usr/bin/ && \
-    rm ngrok-stable-linux-amd64.zip
+#RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
+#    unzip ngrok-stable-linux-amd64.zip && mv ngrok /usr/bin/ && \
+#    rm ngrok-stable-linux-amd64.zip
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
