@@ -50,6 +50,7 @@ RUN add-apt-repository ppa:ondrej/php && \
     php7.2-soap \
     php7.2-gd \
     php7.2-mailparse \
+    php7.2-gmp \
     php-memcached \
     composer && \
     update-alternatives --set php /usr/bin/php7.2 && \
