@@ -56,6 +56,7 @@ RUN add-apt-repository ppa:ondrej/php && \
     php7.2-gd \
     php7.2-bcmath \
     php7.2-mailparse \
+    php7.2-gmp \
     php7.2-imagick \
     php-memcached \
     composer && \
